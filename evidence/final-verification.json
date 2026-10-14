@@ -1,0 +1,103 @@
+{
+  "checkedAt": "2026-10-14T04:09:27.741Z",
+  "checks": {
+    "total": 90,
+    "passed": 88,
+    "failed": 0,
+    "skipped": 2,
+    "scope": "Portable tests and actual loopback HTTP contracts; RELAY_HTTP_TESTS=1",
+    "skippedReason": "Two tests require standalone Chromium; a separate live attempt failed at macOS Mach bootstrap with permission denied (1100)."
+  },
+  "runs": {
+    "final-discovery": {
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 5,
+      "handoffs": 0,
+      "runId": "fb605a35-8655-44e3-9f67-c3bdd52ed5b8",
+      "sessionId": "5f986ade-d6e1-449d-b1d9-20579388e177",
+      "integrity": {
+        "events": 40,
+        "finalHash": "e9469e4a32514de418f21c76e96f1651cd86e22d53678afff899f8b52404fc58"
+      },
+      "resultReconciliation": "matched",
+      "resultSha256": "6cd157003dcbb763a8d982d2251deafcfc3bd16185283e5adb6046ebbd0c5f4b"
+    },
+    "final-replay": {
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "handoffs": 0,
+      "runId": "b0aeb6f4-ccb0-4d76-97aa-be7ed7dd9eba",
+      "sessionId": "73ce26b2-aca1-4fbe-9f7b-19dda4fc80d2",
+      "integrity": {
+        "events": 29,
+        "finalHash": "1791dabf2e09c036e0d3fdcd401ea50d3acfacbeffc399b8000992a8fff829ed"
+      },
+      "resultReconciliation": "matched",
+      "resultSha256": "a1880598768e5cb0eb0156be70173e2d8a5b8389dbf22e3ba3fa37c4894df55e"
+    },
+    "console-automated": {
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "handoffs": 1,
+      "runId": "25f2571a-85d2-4c28-a90b-3ee4cae7e9ab",
+      "sessionId": "57f51912-a661-4c10-a36e-d3ea229334e3",
+      "integrity": {
+        "events": 36,
+        "finalHash": "44e0f87fc6e19616f03953e1d6999a2417f9a2ba29eef0d51ce81812de0edc99"
+      },
+      "resultReconciliation": "matched",
+      "resultSha256": "79249563865c5aa6738a7842f60a709d532af755f1b2ab99c94a4f9a2f6c82fc"
+    }
+  },
+  "capabilitySha256": "8172023b87ae1e6d0a87b0ae8e01125ef5af00611c0364b38202346ec127868c",
+  "consoleVerification": {
+    "status": "verified",
+    "humanParticipant": false,
+    "manualProof": false,
+    "automatedConsoleTestActor": true,
+    "adapter": "ConnectedSurface",
+    "genuineAPIDiscovery": false,
+    "nativeBrowserReplay": false,
+    "hostedBrowserReplay": true,
+    "modelCalls": 0,
+    "handoffs": 1,
+    "runId": "25f2571a-85d2-4c28-a90b-3ee4cae7e9ab",
+    "reasons": [],
+    "checkedAt": "2026-10-14T04:03:17.409Z",
+    "integrity": {
+      "events": 36,
+      "finalHash": "44e0f87fc6e19616f03953e1d6999a2417f9a2ba29eef0d51ce81812de0edc99"
+    },
+    "continuity": {
+      "samePage": true,
+      "sameContext": null,
+      "sameTab": true,
+      "sameSession": true,
+      "storagePreserved": null,
+      "pausedPageWasOriginal": true
+    },
+    "privacyVerified": true,
+    "storageContinuity": "Not asserted for hosted adapter; same live tab/page/session checked"
+  },
+  "privacy": {
+    "sharedFilterAcrossAdapters": true,
+    "newPersistedRecordsScanned": true,
+    "syntheticValuesRedacted": true,
+    "consoleImagesVisuallyReviewed": true
+  },
+  "limits": {
+    "standalonePlaywrightVerified": false,
+    "reason": "Chromium launch restricted by macOS Mach bootstrap permissions in this environment",
+    "openAIApiDiscoveryVerified": false,
+    "apiKeyAvailable": false,
+    "realLLMDiscoveryVerified": true,
+    "discoveryProvider": "Codex live model through ConnectedSurface",
+    "humanParticipantVerified": false,
+    "consoleControlsAutomated": true,
+    "hostedStorageContinuityAsserted": false
+  },
+  "verificationTransport": "The actual operator HTTP handler was served through a verification-only filesystem relay because the hosted runtime cannot listen on a socket. Browser interactions and control actions used the documented CUA APIs within one active invocation. Production console defaults to Node HTTP."
+}

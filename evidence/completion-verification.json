@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-07",
+  "privacyFiltering": {
+    "implemented": true,
+    "sharedAcrossAdapters": true,
+    "portableRegressionTests": 8,
+    "liveHostedFixturePassed": true,
+    "includesTitlesControlLabelsFrameMetadataURLsAndNormalizedFields": true,
+    "privateValuesAbsentFromSavedEvidence": true,
+    "nativeLiveBrowserVerified": false
+  },
+  "tests": {
+    "passed": 76,
+    "skippedNativeSuites": 2,
+    "failed": 0
+  },
+  "nativeVerification": {
+    "attempted": true,
+    "passed": false,
+    "reason": "Host denies Chromium Mach bootstrap during standalone browser launch"
+  },
+  "openAIVerification": {
+    "authorized": true,
+    "performed": false,
+    "reason": "Project owner has no API key; prerequisite guard rejected the run before any API request"
+  },
+  "actualPersonVerification": {
+    "implemented": true,
+    "performed": false,
+    "reason": "Project owner will run the interactive manual check later",
+    "command": "npm run verify:human",
+    "attestationRequired": true
+  },
+  "endToEndCommand": "npm run verify:end-to-end",
+  "liveReplayTransport": "Codex hosted browser; shipped Runner and ConnectedSurface",
+  "runs": [
+    {
+      "directory": "evidence/privacy-replay",
+      "status": "success",
+      "modelCalls": 0,
+      "handoffs": 0,
+      "outputVerifiedInMemory": true,
+      "actor": "automation",
+      "humanParticipant": false,
+      "integrity": {
+        "events": 29,
+        "finalHash": "fac82ff14427f31832cc9bf1263a39951a36c9e34f8d6413cdbb2411b9253ea0"
+      }
+    },
+    {
+      "directory": "evidence/privacy-handoff",
+      "status": "success",
+      "modelCalls": 0,
+      "handoffs": 1,
+      "outputVerifiedInMemory": true,
+      "actor": "simulated operator test actor",
+      "humanParticipant": false,
+      "integrity": {
+        "events": 35,
+        "finalHash": "e2dd37a8c78069b1f436eea81a3e7934fabac96987bc56dbf38e84c6055ddf37"
+      }
+    }
+  ],
+  "timelineBrowserQA": {
+    "performed": true,
+    "screenshot": "privacy-verification/timeline.png",
+    "viewer": "saved-run/read-only",
+    "simulatedActorClearlyLabeled": true
+  }
+}

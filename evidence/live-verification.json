@@ -1,0 +1,94 @@
+{
+  "browser": "Codex hosted browser",
+  "discovery": {
+    "model": "Codex live session (GPT-6)",
+    "modelCalls": 5,
+    "steps": 4,
+    "genuineLLM": true
+  },
+  "operatorActor": "explicitly simulated operator test actor on the actual UI",
+  "standalonePlaywrightLaunchVerified": false,
+  "openAIProviderRunVerified": false,
+  "scenarios": [
+    {
+      "scenario": "normal",
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "handoffs": 0,
+      "typedOutputVerified": true
+    },
+    {
+      "scenario": "not_found",
+      "status": "business_outcome",
+      "code": "MEMBER_NOT_FOUND",
+      "modelCalls": 0,
+      "handoffs": 0,
+      "typedOutputVerified": false
+    },
+    {
+      "scenario": "validation",
+      "status": "business_outcome",
+      "code": "VALIDATION_ERROR",
+      "modelCalls": 0,
+      "handoffs": 0,
+      "typedOutputVerified": false
+    },
+    {
+      "scenario": "slow",
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "handoffs": 0,
+      "typedOutputVerified": true
+    },
+    {
+      "scenario": "interstitial",
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "handoffs": 0,
+      "typedOutputVerified": true
+    },
+    {
+      "scenario": "permission",
+      "status": "intervention_required",
+      "code": "PERMISSION_DENIED",
+      "modelCalls": 0,
+      "handoffs": 0,
+      "typedOutputVerified": false
+    },
+    {
+      "scenario": "app_error",
+      "status": "intervention_required",
+      "code": "APPLICATION_ERROR",
+      "modelCalls": 0,
+      "handoffs": 0,
+      "typedOutputVerified": false
+    },
+    {
+      "scenario": "ambiguous",
+      "status": "intervention_required",
+      "code": "ambiguous_target",
+      "modelCalls": 0,
+      "handoffs": 0,
+      "typedOutputVerified": false
+    },
+    {
+      "scenario": "session_expired",
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "handoffs": 1,
+      "typedOutputVerified": true
+    },
+    {
+      "scenario": "unexpected_dialog",
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "handoffs": 1,
+      "typedOutputVerified": true
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-06",
+  "portableAndHTTPTests": {
+    "passed": 59,
+    "skippedNativeSuites": 2,
+    "failed": 0
+  },
+  "nativeVerification": {
+    "attempted": true,
+    "passed": false,
+    "reason": "Host denies Chromium Mach bootstrap during standalone browser launch"
+  },
+  "openAIVerification": {
+    "authorized": true,
+    "performed": false,
+    "reason": "OPENAI_API_KEY is not configured"
+  },
+  "liveReplayTransport": "Codex hosted browser; shipped Runner and ConnectedSurface",
+  "humanParticipant": false,
+  "runs": [
+    {
+      "run": "timeline-replay",
+      "status": "success",
+      "modelCalls": 0,
+      "steps": 4,
+      "checkpointTelemetryAvailable": true,
+      "operatorTestActor": false,
+      "integrity": {
+        "events": 29,
+        "finalHash": "aeb31c60c6a2178db5ee7b83502668b8631877715b8ada4ece0245d090a25e70"
+      }
+    },
+    {
+      "run": "timeline-handoff",
+      "status": "success",
+      "modelCalls": 0,
+      "steps": 4,
+      "checkpointTelemetryAvailable": true,
+      "operatorTestActor": true,
+      "integrity": {
+        "events": 35,
+        "finalHash": "80f6fe18af3ea04e737c5c55392262194f69f3a87013440b6c95be666cdc69fe"
+      }
+    }
+  ],
+  "timelineBrowserQA": {
+    "performed": true,
+    "viewer": "saved-run/read-only",
+    "sameSessionRecoveryEventsVisible": true,
+    "screenshot": "timeline.png"
+  }
+}

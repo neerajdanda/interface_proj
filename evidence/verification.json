@@ -1,0 +1,100 @@
+{
+  "capabilityValid": true,
+  "logIntegrityVerified": true,
+  "privacySampleScanPassed": true,
+  "testCommand": "RELAY_HTTP_TESTS=1 node --test tests/*.test.mjs",
+  "testsPassed": 37,
+  "standaloneBrowserSuiteSkipped": 1,
+  "modelAPIRunPerformed": false,
+  "publicRepositoryCreated": false,
+  "runs": [
+    {
+      "run": "ambiguous",
+      "status": "intervention_required",
+      "code": "ambiguous_target",
+      "modelCalls": 0,
+      "events": 10,
+      "finalHash": "f8e0c70046fda648f8979176db8b907a60fbdd94566476fc05dcf842cb7a8aa6"
+    },
+    {
+      "run": "app_error",
+      "status": "intervention_required",
+      "code": "APPLICATION_ERROR",
+      "modelCalls": 0,
+      "events": 8,
+      "finalHash": "e7526f46d8b199a86ea7dbebb9c5ac0d35e5842d4033e689fab9c704a4ffedb5"
+    },
+    {
+      "run": "discovery",
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 5,
+      "events": 17,
+      "finalHash": "119c02ab68bf7b6b740bf893a5fda372e5d8e854b297a7dd3712d503a0801b45"
+    },
+    {
+      "run": "interstitial",
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "events": 12,
+      "finalHash": "1bc966e19fe5279179c6c6828258cf7389dd95aaf6cdf8cb3e626802a910d6fd"
+    },
+    {
+      "run": "not_found",
+      "status": "business_outcome",
+      "code": "MEMBER_NOT_FOUND",
+      "modelCalls": 0,
+      "events": 6,
+      "finalHash": "98351a92dabf8a6ebd38ec6c90b3e43ba628d3017b3afe664f98960c792cd292"
+    },
+    {
+      "run": "permission",
+      "status": "intervention_required",
+      "code": "PERMISSION_DENIED",
+      "modelCalls": 0,
+      "events": 8,
+      "finalHash": "cae31fcfa0cb7ae3e12eab068b33319bd686e032c5009da75331175e1810a6e3"
+    },
+    {
+      "run": "replay",
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "events": 11,
+      "finalHash": "d904cbc2b7024dc75d86785f65fe632438fac34ba29dbf8730e4522586ec431c"
+    },
+    {
+      "run": "session_expired",
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "events": 17,
+      "finalHash": "5ab902ae38bb7efc431319ce8ea187e5cdd6f2d65c437d6c26da7362a4e812f2"
+    },
+    {
+      "run": "slow",
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "events": 11,
+      "finalHash": "4c342eb82ff4117a4445affd8957451f721509893f42c742ebe214dd3a081cfb"
+    },
+    {
+      "run": "unexpected_dialog",
+      "status": "success",
+      "code": "GOAL_VERIFIED",
+      "modelCalls": 0,
+      "events": 17,
+      "finalHash": "2496ea5ba917362445b4de78a6b4fd7028ab2a51d58864ae1f274a338b45f781"
+    },
+    {
+      "run": "validation",
+      "status": "business_outcome",
+      "code": "VALIDATION_ERROR",
+      "modelCalls": 0,
+      "events": 6,
+      "finalHash": "66ff84a23d7760b00ae5066bf171315905575267ac7dc6b92404c2dc47a63090"
+    }
+  ]
+}
