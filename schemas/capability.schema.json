@@ -1,0 +1,817 @@
+{
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "allOf": [
+        {
+          "pattern": "\\S"
+        },
+        {
+          "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+        },
+        {
+          "pattern": "^[A-Za-z][A-Za-z0-9._-]{0,79}$"
+        }
+      ]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "allOf": [
+        {
+          "pattern": "\\S"
+        },
+        {
+          "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+        }
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000,
+      "allOf": [
+        {
+          "pattern": "\\S"
+        },
+        {
+          "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+        }
+      ]
+    },
+    "vendor": {
+      "type": "object",
+      "properties": {
+        "product": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "allOf": [
+            {
+              "pattern": "\\S"
+            },
+            {
+              "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+            }
+          ]
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "allOf": [
+            {
+              "pattern": "\\S"
+            },
+            {
+              "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+            }
+          ]
+        }
+      },
+      "required": [
+        "product",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "entry": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "const": "/bank"
+        },
+        "frame": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "allOf": [
+            {
+              "pattern": "\\S"
+            },
+            {
+              "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+            }
+          ]
+        }
+      },
+      "required": [
+        "path",
+        "frame"
+      ],
+      "additionalProperties": false
+    },
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "member_id": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "string"
+            },
+            "pattern": {
+              "const": "^[0-9]{5}$"
+            },
+            "sensitive": {
+              "const": true
+            }
+          },
+          "required": [
+            "type",
+            "pattern",
+            "sensitive"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "member_id"
+      ],
+      "additionalProperties": false
+    },
+    "outputs": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 8,
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9_]{0,63}$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/output"
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/step"
+      },
+      "minItems": 1,
+      "maxItems": 64
+    },
+    "success": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/condition"
+      },
+      "minItems": 1,
+      "maxItems": 8
+    },
+    "outcomes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/outcome"
+      },
+      "minItems": 0,
+      "maxItems": 16
+    },
+    "recoveries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/recovery"
+      },
+      "minItems": 0,
+      "maxItems": 8
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "const": "draft"
+        }
+      },
+      "required": [
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "enum": [
+            "openai",
+            "codex-bridge"
+          ]
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "allOf": [
+            {
+              "pattern": "\\S"
+            },
+            {
+              "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+            }
+          ]
+        }
+      },
+      "required": [
+        "mode",
+        "model"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "description",
+    "vendor",
+    "entry",
+    "inputs",
+    "outputs",
+    "steps",
+    "success",
+    "outcomes",
+    "recoveries",
+    "review",
+    "provenance"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://relay.local/schemas/capability-1.0.0.json",
+  "title": "Relay Capability v1",
+  "description": "A bounded, reviewable UI program. Steps execute at most once; only declared recoveries may repeat. Runtime additionally enforces unique step/outcome IDs, declared parameter references, sensitive-literal exclusion, and a 256 KiB serialization bound.",
+  "$defs": {
+    "target": {
+      "type": "object",
+      "properties": {
+        "frame": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "allOf": [
+            {
+              "pattern": "\\S"
+            },
+            {
+              "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+            }
+          ]
+        },
+        "strategies": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "role"
+                  },
+                  "role": {
+                    "enum": [
+                      "alert",
+                      "button",
+                      "cell",
+                      "checkbox",
+                      "combobox",
+                      "dialog",
+                      "grid",
+                      "heading",
+                      "link",
+                      "list",
+                      "listbox",
+                      "listitem",
+                      "main",
+                      "option",
+                      "radio",
+                      "region",
+                      "row",
+                      "searchbox",
+                      "spinbutton",
+                      "status",
+                      "tab",
+                      "table",
+                      "textbox"
+                    ]
+                  },
+                  "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 180,
+                    "allOf": [
+                      {
+                        "pattern": "\\S"
+                      },
+                      {
+                        "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "kind",
+                  "role",
+                  "name"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "row"
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 180,
+                    "allOf": [
+                      {
+                        "pattern": "\\S"
+                      },
+                      {
+                        "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+                      }
+                    ]
+                  },
+                  "control": {
+                    "enum": [
+                      "input",
+                      "text"
+                    ]
+                  }
+                },
+                "required": [
+                  "kind",
+                  "label",
+                  "control"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "text"
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 180,
+                    "allOf": [
+                      {
+                        "pattern": "\\S"
+                      },
+                      {
+                        "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "kind",
+                  "text"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "label"
+                  },
+                  "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 180,
+                    "allOf": [
+                      {
+                        "pattern": "\\S"
+                      },
+                      {
+                        "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "kind",
+                  "name"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "strategies"
+      ],
+      "additionalProperties": false
+    },
+    "condition": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "target": {
+              "$ref": "#/$defs/target"
+            },
+            "op": {
+              "const": "visible"
+            }
+          },
+          "required": [
+            "target",
+            "op"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "target": {
+              "$ref": "#/$defs/target"
+            },
+            "op": {
+              "enum": [
+                "text_equals",
+                "text_contains"
+              ]
+            },
+            "value": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 180,
+                  "allOf": [
+                    {
+                      "pattern": "\\S"
+                    },
+                    {
+                      "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+                    }
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "param": {
+                      "const": "member_id"
+                    }
+                  },
+                  "required": [
+                    "param"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "target",
+            "op",
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "action": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "fill",
+                "select"
+              ]
+            },
+            "target": {
+              "$ref": "#/$defs/target"
+            },
+            "value": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256,
+                  "allOf": [
+                    {
+                      "pattern": "\\S"
+                    },
+                    {
+                      "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+                    }
+                  ]
+                },
+                {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "param": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "allOf": [
+                        {
+                          "pattern": "\\S"
+                        },
+                        {
+                          "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+                        },
+                        {
+                          "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "param"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "target",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "click"
+            },
+            "target": {
+              "$ref": "#/$defs/target"
+            }
+          },
+          "required": [
+            "type",
+            "target"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "wait"
+            },
+            "target": {
+              "$ref": "#/$defs/target"
+            },
+            "ms": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "money",
+            "string"
+          ]
+        },
+        "sensitive": {
+          "type": "boolean"
+        },
+        "target": {
+          "$ref": "#/$defs/target"
+        }
+      },
+      "required": [
+        "type",
+        "sensitive",
+        "target"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "money"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "sensitive": {
+                "const": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    "step": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "allOf": [
+            {
+              "pattern": "\\S"
+            },
+            {
+              "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+            },
+            {
+              "pattern": "^[A-Za-z][A-Za-z0-9._-]{0,79}$"
+            }
+          ]
+        },
+        "action": {
+          "$ref": "#/$defs/action"
+        },
+        "before": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/condition"
+          },
+          "minItems": 1,
+          "maxItems": 8
+        },
+        "after": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/condition"
+          },
+          "minItems": 0,
+          "maxItems": 8
+        },
+        "effect": {
+          "enum": [
+            "read",
+            "reversible",
+            "irreversible"
+          ]
+        },
+        "retry": {
+          "type": "object",
+          "properties": {
+            "maxAttempts": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "maxAttempts"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "action",
+        "before",
+        "after",
+        "effect",
+        "retry"
+      ],
+      "additionalProperties": false
+    },
+    "outcome": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "allOf": [
+            {
+              "pattern": "\\S"
+            },
+            {
+              "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+            },
+            {
+              "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+            }
+          ]
+        },
+        "when": {
+          "$ref": "#/$defs/condition"
+        }
+      },
+      "required": [
+        "code",
+        "when"
+      ],
+      "additionalProperties": false
+    },
+    "recovery": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "allOf": [
+            {
+              "pattern": "\\S"
+            },
+            {
+              "pattern": "^[^\\u0000-\\u001F\\u007F]+$"
+            },
+            {
+              "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+            }
+          ]
+        },
+        "when": {
+          "$ref": "#/$defs/condition"
+        },
+        "action": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "click"
+                },
+                "target": {
+                  "$ref": "#/$defs/target"
+                }
+              },
+              "required": [
+                "type",
+                "target"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "wait"
+                },
+                "target": {
+                  "$ref": "#/$defs/target"
+                },
+                "ms": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "maxAttempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        }
+      },
+      "required": [
+        "code",
+        "when",
+        "action",
+        "maxAttempts"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$comment": "Runtime semantic requirement for this fixed member savings contract: success must contain text_equals with value {param:member_id}, targeting the Member ID row with control text in exactly entry.frame. This cross-field identity requirement is enforced by validateCapability, in addition to JSON Schema validation."
+}
