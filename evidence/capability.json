@@ -1,0 +1,329 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "member-savings.lookup",
+  "name": "Member savings lookup",
+  "description": "Search for a member and return the verified savings balance through the legacy UI.",
+  "vendor": {
+    "product": "Relay Ledger",
+    "version": "1"
+  },
+  "entry": {
+    "path": "/bank",
+    "frame": "Member workspace"
+  },
+  "inputs": {
+    "member_id": {
+      "type": "string",
+      "pattern": "^[0-9]{5}$",
+      "sensitive": true
+    }
+  },
+  "outputs": {
+    "savings_balance": {
+      "type": "money",
+      "sensitive": true,
+      "target": {
+        "frame": "Member workspace",
+        "strategies": [
+          {
+            "kind": "row",
+            "label": "Savings balance",
+            "control": "text"
+          }
+        ]
+      }
+    }
+  },
+  "steps": [
+    {
+      "id": "step-1",
+      "action": {
+        "type": "fill",
+        "target": {
+          "frame": "Member workspace",
+          "strategies": [
+            {
+              "kind": "row",
+              "label": "Member ID",
+              "control": "input"
+            }
+          ]
+        },
+        "value": {
+          "param": "member_id"
+        }
+      },
+      "before": [
+        {
+          "target": {
+            "frame": "Member workspace",
+            "strategies": [
+              {
+                "kind": "role",
+                "role": "heading",
+                "name": "Find a member"
+              }
+            ]
+          },
+          "op": "visible"
+        }
+      ],
+      "after": [],
+      "effect": "reversible",
+      "retry": {
+        "maxAttempts": 1
+      }
+    },
+    {
+      "id": "step-2",
+      "action": {
+        "type": "click",
+        "target": {
+          "frame": "Member workspace",
+          "strategies": [
+            {
+              "kind": "role",
+              "role": "button",
+              "name": "Search"
+            }
+          ]
+        }
+      },
+      "before": [
+        {
+          "target": {
+            "frame": "Member workspace",
+            "strategies": [
+              {
+                "kind": "role",
+                "role": "heading",
+                "name": "Find a member"
+              }
+            ]
+          },
+          "op": "visible"
+        }
+      ],
+      "after": [
+        {
+          "target": {
+            "frame": "Member workspace",
+            "strategies": [
+              {
+                "kind": "role",
+                "role": "heading",
+                "name": "Search results"
+              }
+            ]
+          },
+          "op": "visible"
+        }
+      ],
+      "effect": "read",
+      "retry": {
+        "maxAttempts": 1
+      }
+    },
+    {
+      "id": "step-3",
+      "action": {
+        "type": "click",
+        "target": {
+          "frame": "Member workspace",
+          "strategies": [
+            {
+              "kind": "role",
+              "role": "button",
+              "name": "Open member"
+            }
+          ]
+        }
+      },
+      "before": [
+        {
+          "target": {
+            "frame": "Member workspace",
+            "strategies": [
+              {
+                "kind": "role",
+                "role": "heading",
+                "name": "Search results"
+              }
+            ]
+          },
+          "op": "visible"
+        }
+      ],
+      "after": [
+        {
+          "target": {
+            "frame": "Member workspace",
+            "strategies": [
+              {
+                "kind": "role",
+                "role": "heading",
+                "name": "Member overview"
+              }
+            ]
+          },
+          "op": "visible"
+        }
+      ],
+      "effect": "read",
+      "retry": {
+        "maxAttempts": 1
+      }
+    },
+    {
+      "id": "step-4",
+      "action": {
+        "type": "click",
+        "target": {
+          "frame": "Member workspace",
+          "strategies": [
+            {
+              "kind": "role",
+              "role": "button",
+              "name": "Account summary"
+            }
+          ]
+        }
+      },
+      "before": [
+        {
+          "target": {
+            "frame": "Member workspace",
+            "strategies": [
+              {
+                "kind": "role",
+                "role": "heading",
+                "name": "Member overview"
+              }
+            ]
+          },
+          "op": "visible"
+        }
+      ],
+      "after": [
+        {
+          "target": {
+            "frame": "Member workspace",
+            "strategies": [
+              {
+                "kind": "role",
+                "role": "heading",
+                "name": "Account summary"
+              }
+            ]
+          },
+          "op": "visible"
+        }
+      ],
+      "effect": "read",
+      "retry": {
+        "maxAttempts": 1
+      }
+    }
+  ],
+  "success": [
+    {
+      "target": {
+        "frame": "Member workspace",
+        "strategies": [
+          {
+            "kind": "role",
+            "role": "heading",
+            "name": "Account summary"
+          }
+        ]
+      },
+      "op": "visible"
+    },
+    {
+      "target": {
+        "frame": "Member workspace",
+        "strategies": [
+          {
+            "kind": "row",
+            "label": "Member ID",
+            "control": "text"
+          }
+        ]
+      },
+      "op": "text_equals",
+      "value": {
+        "param": "member_id"
+      }
+    }
+  ],
+  "outcomes": [
+    {
+      "code": "MEMBER_NOT_FOUND",
+      "when": {
+        "target": {
+          "frame": "Member workspace",
+          "strategies": [
+            {
+              "kind": "text",
+              "text": "Member not found"
+            }
+          ]
+        },
+        "op": "visible"
+      }
+    },
+    {
+      "code": "VALIDATION_ERROR",
+      "when": {
+        "target": {
+          "frame": "Member workspace",
+          "strategies": [
+            {
+              "kind": "text",
+              "text": "Validation error"
+            }
+          ]
+        },
+        "op": "visible"
+      }
+    }
+  ],
+  "recoveries": [
+    {
+      "code": "SERVICE_NOTICE",
+      "when": {
+        "target": {
+          "frame": "Member workspace",
+          "strategies": [
+            {
+              "kind": "text",
+              "text": "Service notice"
+            }
+          ]
+        },
+        "op": "visible"
+      },
+      "action": {
+        "type": "click",
+        "target": {
+          "frame": "Member workspace",
+          "strategies": [
+            {
+              "kind": "role",
+              "role": "button",
+              "name": "Continue"
+            }
+          ]
+        }
+      },
+      "maxAttempts": 1
+    }
+  ],
+  "review": {
+    "state": "draft"
+  },
+  "provenance": {
+    "mode": "codex-bridge",
+    "model": "Codex live session (GPT-6)"
+  }
+}
