@@ -1,0 +1,25 @@
+{
+  "name": "relay-computer-use",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Discover once. Review the contract. Replay with proof.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "sandbox": "node src/cli.mjs sandbox",
+    "discover": "node src/cli.mjs discover",
+    "replay": "node src/cli.mjs replay",
+    "test": "node --test tests/*.test.mjs",
+    "demo": "node src/demo.mjs",
+    "review": "node src/cli.mjs review",
+    "verify:live": "node tools/verify-live.mjs",
+    "verify:api": "node tools/verify-live.mjs --api",
+    "verify:human": "node tools/verify-human.mjs",
+    "verify:end-to-end": "node tools/verify-live.mjs --api --human"
+  },
+  "dependencies": {
+    "playwright": "1.62.1"
+  }
+}
