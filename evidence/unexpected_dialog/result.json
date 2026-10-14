@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "code": "GOAL_VERIFIED",
+  "outputs": {
+    "savings_balance": "[REDACTED]"
+  },
+  "sessionId": "3d5005ff-9139-4b12-b63c-1d0d57b392dd",
+  "modelCalls": 0,
+  "handoffs": 1
+}
