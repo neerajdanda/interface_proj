@@ -1,0 +1,29 @@
+{
+  "status": "verified",
+  "humanParticipant": false,
+  "manualProof": false,
+  "automatedConsoleTestActor": true,
+  "adapter": "ConnectedSurface",
+  "genuineAPIDiscovery": false,
+  "nativeBrowserReplay": false,
+  "hostedBrowserReplay": true,
+  "modelCalls": 0,
+  "handoffs": 1,
+  "runId": "25f2571a-85d2-4c28-a90b-3ee4cae7e9ab",
+  "reasons": [],
+  "checkedAt": "2026-10-14T04:03:17.409Z",
+  "integrity": {
+    "events": 36,
+    "finalHash": "44e0f87fc6e19616f03953e1d6999a2417f9a2ba29eef0d51ce81812de0edc99"
+  },
+  "continuity": {
+    "samePage": true,
+    "sameContext": null,
+    "sameTab": true,
+    "sameSession": true,
+    "storagePreserved": null,
+    "pausedPageWasOriginal": true
+  },
+  "privacyVerified": true,
+  "storageContinuity": "Not asserted for hosted adapter; same live tab/page/session checked"
+}
