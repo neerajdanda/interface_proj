@@ -1,0 +1,50 @@
+{
+  "observation": {
+    "url": "http://127.0.0.1:4178/bank",
+    "title": "Relay · Banking sandbox",
+    "frames": [
+      {
+        "name": "Main page",
+        "title": "Relay · Banking sandbox",
+        "text": "relay↗\nMEMBER OPERATIONS\n◈   Member workspace\n▤   Activity ledger\n◇   Service requests\n⚑   Review queue\nSandbox connection\nSynthetic records only\nUI automation training environment\nOperations   /   Member services\nSANDBOX · NO REAL BANKING\nA clear path through complexity.\n\nFind a member, verify the account, and keep the human in control.\n\nLOCAL / UI-ONLY / REVERSIBLE\nRelay sandbox · Fictional credit union\nAccessible controls · Nested workspace · Synthetic data"
+      },
+      {
+        "name": "Member workspace",
+        "title": "Member workspace · Relay sandbox",
+        "text": "Northstar Credit Union\nMEMBER SERVICES / SANDBOX\nWORKSPACE 04 / SYNTHETIC\nMember services   /   Workspace\nVERIFIED MEMBER INQUIRY\nAccount summary\n\nBalances are synthetic and available for inquiry only.\n\nACCOUNT LEDGER\nSavings balance\t[REDACTED]\nChecking balance\t[REDACTED]\nMember ID\t[REDACTED]\nAccount status\t[REDACTED]\nOpen sub-account\nMember overview\nA deliberate service flow\n01\nLocate the member using a unique ID.\n02\nReview the member overview.\n03\nRead the verified account summary.\n\nEvery value on this screen is fictional. This sandbox never connects to a bank.\n\nRecovery controls let an operator resolve interruptions without restarting the workflow.\n\nTraining fixture · No production data · All actions occur inside this browser workspace."
+      }
+    ],
+    "controls": [
+      {
+        "role": "button",
+        "name": "Open sub-account",
+        "target": {
+          "frame": "Member workspace",
+          "strategies": [
+            {
+              "kind": "role",
+              "name": "Open sub-account",
+              "role": "button"
+            }
+          ]
+        }
+      },
+      {
+        "role": "button",
+        "name": "Member overview",
+        "target": {
+          "frame": "Member workspace",
+          "strategies": [
+            {
+              "kind": "role",
+              "name": "Member overview",
+              "role": "button"
+            }
+          ]
+        }
+      }
+    ],
+    "text": "relay↗\nMEMBER OPERATIONS\n◈   Member workspace\n▤   Activity ledger\n◇   Service requests\n⚑   Review queue\nSandbox connection\nSynthetic records only\nUI automation training environment\nOperations   /   Member services\nSANDBOX · NO REAL BANKING\nA clear path through complexity.\n\nFind a member, verify the account, and keep the human in control.\n\nLOCAL / UI-ONLY / REVERSIBLE\nRelay sandbox · Fictional credit union\nAccessible controls · Nested workspace · Synthetic data\n\nNorthstar Credit Union\nMEMBER SERVICES / SANDBOX\nWORKSPACE 04 / SYNTHETIC\nMember services   /   Workspace\nVERIFIED MEMBER INQUIRY\nAccount summary\n\nBalances are synthetic and available for inquiry only.\n\nACCOUNT LEDGER\nSavings balance\t[REDACTED]\nChecking balance\t[REDACTED]\nMember ID\t[REDACTED]\nAccount status\t[REDACTED]\nOpen sub-account\nMember overview\nA deliberate service flow\n01\nLocate the member using a unique ID.\n02\nReview the member overview.\n03\nRead the verified account summary.\n\nEvery value on this screen is fictional. This sandbox never connects to a bank.\n\nRecovery controls let an operator resolve interruptions without restarting the workflow.\n\nTraining fixture · No production data · All actions occur inside this browser workspace."
+  },
+  "redactedDom": "- complementary:\n  - generic: relay↗\n  - generic: Member operations\n  - navigation \"Workspace sections\":\n    - generic: ◈ Member workspace\n    - generic: ▤ Activity ledger\n    - generic: ◇ Service requests\n    - generic: ⚑ Review queue\n  - text: Sandbox connection\n  - text: Synthetic records only\n  - text: UI automation training environment\n- main:\n  - generic: Operations / Member services\n  - generic: SANDBOX · NO REAL BANKING\n  - heading \"A clear path through complexity.\" [level=1]\n  - paragraph: Find a member, verify the account, and keep the human in control.\n  - generic: LOCAL / UI-ONLY / REVERSIBLE\n  - iframe [active]:\n    - main:\n      - strong: Northstar Credit Union\n      - generic: MEMBER SERVICES / SANDBOX\n      - generic: WORKSPACE 04 / SYNTHETIC\n      - generic: Member services / Workspace\n      - generic: Verified member inquiry\n      - heading \"Account summary\" [level=2]\n      - paragraph: Balances are synthetic and available for inquiry only.\n      - generic: Account ledger\n      - table:\n        - rowgroup:\n          - row \"Savings balance [REDACTED]\":\n            - rowheader \"Savings balance\"\n            - cell \"[REDACTED]\"\n          - row \"Checking balance [REDACTED]\":\n            - rowheader \"Checking balance\"\n            - cell \"[REDACTED]\"\n          - row \"Member ID [REDACTED]\":\n            - rowheader \"Member ID\"\n            - cell \"[REDACTED]\"\n          - row \"Account status [REDACTED]\":\n            - rowheader \"Account status\"\n            - cell \"[REDACTED]\"\n      - button \"Open sub-account\"\n      - button \"Member overview\"\n      - complementary:\n        - heading \"A deliberate service flow\" [level=3]\n        - generic: \"01\"\n        - generic: Locate the member using a unique ID.\n        - generic: \"02\"\n        - generic: Review the member overview.\n        - generic: \"03\"\n        - generic: Read the verified account summary.\n        - separator\n        - paragraph: Every value on this screen is fictional. This sandbox never connects to a bank.\n        - paragraph: Recovery controls let an operator resolve interruptions without restarting the workflow.\n      - paragraph: Training fixture · No production data · All actions occur inside this browser workspace.\n  - generic: Relay sandbox · Fictional credit union\n  - generic: Accessible controls · Nested workspace · Synthetic data"
+}
