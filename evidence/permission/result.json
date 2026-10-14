@@ -1,0 +1,95 @@
+{
+  "status": "intervention_required",
+  "code": "PERMISSION_DENIED",
+  "step": "step-2",
+  "phase": "after",
+  "expected": [
+    {
+      "target": {
+        "frame": "Member workspace",
+        "strategies": [
+          {
+            "kind": "role",
+            "role": "heading",
+            "name": "Search results"
+          }
+        ]
+      },
+      "op": "visible"
+    }
+  ],
+  "observed": {
+    "url": "http://127.0.0.1:4173/bank?scenario=permission",
+    "title": "Relay · Banking sandbox",
+    "text": "relay↗\nMEMBER OPERATIONS\n◈   Member workspace\n▤   Activity ledger\n◇   Service requests\n⚑   Review queue\nSandbox connection\nSynthetic records only\nUI automation training environment\nOperations   /   Member services\nSANDBOX · NO REAL BANKING\nA clear path through complexity.\n\nFind a member, verify the account, and keep the human in control.\n\nLOCAL / UI-ONLY / REVERSIBLE\nRelay sandbox · Fictional credit union\nAccessible controls · Nested workspace · Synthetic data\n\nNorthstar Credit Union\nMEMBER SERVICES / SANDBOX\nWORKSPACE 04 / SYNTHETIC\nMember services   /   Workspace\nVERIFIED MEMBER INQUIRY\nPermission denied\n\nThis workspace does not have permission to open the requested member.\n\n◇\nThis workspace does not have permission to open the requested member.\nNew search\nA deliberate service flow\n01\nLocate the member using a unique ID.\n02\nReview the member overview.\n03\nRead the verified account summary.\n\nEvery value on this screen is fictional. This sandbox never connects to a bank.\n\nRecovery controls let an operator resolve interruptions without restarting the workflow.\n\nTraining fixture · No production data · All actions occur inside this browser workspace.",
+    "controls": [
+      {
+        "name": "New search",
+        "role": "button",
+        "target": {
+          "strategies": [
+            {
+              "kind": "role",
+              "name": "New search",
+              "role": "button"
+            }
+          ],
+          "frame": "Member workspace"
+        }
+      }
+    ],
+    "frames": [
+      {
+        "name": "Main page",
+        "text": "relay↗\nMEMBER OPERATIONS\n◈   Member workspace\n▤   Activity ledger\n◇   Service requests\n⚑   Review queue\nSandbox connection\nSynthetic records only\nUI automation training environment\nOperations   /   Member services\nSANDBOX · NO REAL BANKING\nA clear path through complexity.\n\nFind a member, verify the account, and keep the human in control.\n\nLOCAL / UI-ONLY / REVERSIBLE\nRelay sandbox · Fictional credit union\nAccessible controls · Nested workspace · Synthetic data"
+      },
+      {
+        "name": "Member workspace",
+        "text": "Northstar Credit Union\nMEMBER SERVICES / SANDBOX\nWORKSPACE 04 / SYNTHETIC\nMember services   /   Workspace\nVERIFIED MEMBER INQUIRY\nPermission denied\n\nThis workspace does not have permission to open the requested member.\n\n◇\nThis workspace does not have permission to open the requested member.\nNew search\nA deliberate service flow\n01\nLocate the member using a unique ID.\n02\nReview the member overview.\n03\nRead the verified account summary.\n\nEvery value on this screen is fictional. This sandbox never connects to a bank.\n\nRecovery controls let an operator resolve interruptions without restarting the workflow.\n\nTraining fixture · No production data · All actions occur inside this browser workspace."
+      }
+    ]
+  },
+  "sessionId": "621b395a-784f-43ca-977e-bea6157e8112",
+  "modelCalls": 0,
+  "intervention": {
+    "id": "7c8405ed-905d-4bd9-8785-2ba2ba67bf99",
+    "code": "PERMISSION_DENIED",
+    "capability": "member-savings.lookup",
+    "step": "step-2",
+    "phase": "after",
+    "expected": "[CIRCULAR]",
+    "observed": {
+      "url": "http://127.0.0.1:4173/bank?scenario=permission",
+      "title": "Relay · Banking sandbox",
+      "text": "relay↗\nMEMBER OPERATIONS\n◈   Member workspace\n▤   Activity ledger\n◇   Service requests\n⚑   Review queue\nSandbox connection\nSynthetic records only\nUI automation training environment\nOperations   /   Member services\nSANDBOX · NO REAL BANKING\nA clear path through complexity.\n\nFind a member, verify the account, and keep the human in control.\n\nLOCAL / UI-ONLY / REVERSIBLE\nRelay sandbox · Fictional credit union\nAccessible controls · Nested workspace · Synthetic data\n\nNorthstar Credit Union\nMEMBER SERVICES / SANDBOX\nWORKSPACE 04 / SYNTHETIC\nMember services   /   Workspace\nVERIFIED MEMBER INQUIRY\nPermission denied\n\nThis workspace does not have permission to open the requested member.\n\n◇\nThis workspace does not have permission to open the requested member.\nNew search\nA deliberate service flow\n01\nLocate the member using a unique ID.\n02\nReview the member overview.\n03\nRead the verified account summary.\n\nEvery value on this screen is fictional. This sandbox never connects to a bank.\n\nRecovery controls let an operator resolve interruptions without restarting the workflow.\n\nTraining fixture · No production data · All actions occur inside this browser workspace.",
+      "controls": [
+        {
+          "name": "New search",
+          "role": "button",
+          "target": {
+            "strategies": [
+              {
+                "kind": "role",
+                "name": "New search",
+                "role": "button"
+              }
+            ],
+            "frame": "Member workspace"
+          }
+        }
+      ],
+      "frames": [
+        {
+          "name": "Main page",
+          "text": "relay↗\nMEMBER OPERATIONS\n◈   Member workspace\n▤   Activity ledger\n◇   Service requests\n⚑   Review queue\nSandbox connection\nSynthetic records only\nUI automation training environment\nOperations   /   Member services\nSANDBOX · NO REAL BANKING\nA clear path through complexity.\n\nFind a member, verify the account, and keep the human in control.\n\nLOCAL / UI-ONLY / REVERSIBLE\nRelay sandbox · Fictional credit union\nAccessible controls · Nested workspace · Synthetic data"
+        },
+        {
+          "name": "Member workspace",
+          "text": "Northstar Credit Union\nMEMBER SERVICES / SANDBOX\nWORKSPACE 04 / SYNTHETIC\nMember services   /   Workspace\nVERIFIED MEMBER INQUIRY\nPermission denied\n\nThis workspace does not have permission to open the requested member.\n\n◇\nThis workspace does not have permission to open the requested member.\nNew search\nA deliberate service flow\n01\nLocate the member using a unique ID.\n02\nReview the member overview.\n03\nRead the verified account summary.\n\nEvery value on this screen is fictional. This sandbox never connects to a bank.\n\nRecovery controls let an operator resolve interruptions without restarting the workflow.\n\nTraining fixture · No production data · All actions occur inside this browser workspace."
+        }
+      ]
+    },
+    "sessionId": "621b395a-784f-43ca-977e-bea6157e8112",
+    "epoch": 2
+  }
+}
