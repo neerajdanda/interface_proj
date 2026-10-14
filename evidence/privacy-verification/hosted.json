@@ -1,0 +1,157 @@
+{
+  "observation": {
+    "url": "http://127.0.0.1:4177/bank",
+    "title": "Review [REDACTED] and [REDACTED] · [REDACTED] · [REDACTED] · [REDACTED_TOKEN]",
+    "frames": [
+      {
+        "name": "Main page",
+        "title": "Review [REDACTED] and [REDACTED] · [REDACTED] · [REDACTED] · [REDACTED_TOKEN]",
+        "text": "Relay privacy verification fixture\n\nFictional records deliberately repeated in titles, labels, and frames.\n\nMember name\t[REDACTED]\nAddress\t[REDACTED]\nRecord for [REDACTED]\nOpen member Contact [REDACTED] at [REDACTED]\nReview [REDACTED]\t\nMemo Search"
+      },
+      {
+        "name": "[REDACTED] workspace for [REDACTED]",
+        "title": "[REDACTED] and [REDACTED] · [REDACTED_TOKEN]",
+        "text": "Member name\t[REDACTED]\nMember ID\t[REDACTED]\nSavings balance\t[REDACTED]\nMember ID\t\nReview [REDACTED]\t\nAccount for [REDACTED]\nOpen member Call [REDACTED] at [REDACTED] Account summary"
+      }
+    ],
+    "controls": [
+      {
+        "role": "button",
+        "name": "Open [REDACTED]",
+        "target": {
+          "strategies": [
+            {
+              "kind": "role",
+              "name": "Open [REDACTED]",
+              "role": "button"
+            }
+          ]
+        }
+      },
+      {
+        "role": "textbox",
+        "name": "Contact [REDACTED] at [REDACTED]",
+        "target": {
+          "strategies": [
+            {
+              "kind": "role",
+              "name": "Contact [REDACTED] at [REDACTED]",
+              "role": "textbox"
+            }
+          ]
+        }
+      },
+      {
+        "role": "textbox",
+        "name": "Review [REDACTED]",
+        "target": {
+          "strategies": [
+            {
+              "control": "input",
+              "kind": "row",
+              "label": "Review [REDACTED]"
+            }
+          ]
+        }
+      },
+      {
+        "role": "textbox",
+        "name": "Memo",
+        "target": {
+          "strategies": [
+            {
+              "kind": "role",
+              "name": "Memo",
+              "role": "textbox"
+            }
+          ]
+        }
+      },
+      {
+        "role": "button",
+        "name": "Search",
+        "target": {
+          "strategies": [
+            {
+              "kind": "role",
+              "name": "Search",
+              "role": "button"
+            }
+          ]
+        }
+      },
+      {
+        "role": "textbox",
+        "name": "Member ID",
+        "target": {
+          "frame": "[REDACTED] workspace for [REDACTED]",
+          "strategies": [
+            {
+              "control": "input",
+              "kind": "row",
+              "label": "Member ID"
+            }
+          ]
+        }
+      },
+      {
+        "role": "textbox",
+        "name": "Review [REDACTED]",
+        "target": {
+          "frame": "[REDACTED] workspace for [REDACTED]",
+          "strategies": [
+            {
+              "control": "input",
+              "kind": "row",
+              "label": "Review [REDACTED]"
+            }
+          ]
+        }
+      },
+      {
+        "role": "button",
+        "name": "Open [REDACTED]",
+        "target": {
+          "frame": "[REDACTED] workspace for [REDACTED]",
+          "strategies": [
+            {
+              "kind": "role",
+              "name": "Open [REDACTED]",
+              "role": "button"
+            }
+          ]
+        }
+      },
+      {
+        "role": "textbox",
+        "name": "Call [REDACTED] at [REDACTED]",
+        "target": {
+          "frame": "[REDACTED] workspace for [REDACTED]",
+          "strategies": [
+            {
+              "kind": "role",
+              "name": "Call [REDACTED] at [REDACTED]",
+              "role": "textbox"
+            }
+          ]
+        }
+      },
+      {
+        "role": "button",
+        "name": "Account summary",
+        "target": {
+          "frame": "[REDACTED] workspace for [REDACTED]",
+          "strategies": [
+            {
+              "kind": "role",
+              "name": "Account summary",
+              "role": "button"
+            }
+          ]
+        }
+      }
+    ],
+    "text": "Relay privacy verification fixture\n\nFictional records deliberately repeated in titles, labels, and frames.\n\nMember name\t[REDACTED]\nAddress\t[REDACTED]\nRecord for [REDACTED]\nOpen member Contact [REDACTED] at [REDACTED]\nReview [REDACTED]\t\nMemo Search\n\nMember name\t[REDACTED]\nMember ID\t[REDACTED]\nSavings balance\t[REDACTED]\nMember ID\t\nReview [REDACTED]\t\nAccount for [REDACTED]\nOpen member Call [REDACTED] at [REDACTED] Account summary"
+  },
+  "redactedDom": "- heading \"Relay privacy verification fixture\" [level=1]\n- paragraph: Fictional records deliberately repeated in titles, labels, and frames.\n- table:\n  - rowgroup:\n    - row \"Member name [REDACTED]\":\n      - rowheader \"Member name\"\n      - cell \"[REDACTED]\"\n    - row \"Address [REDACTED]\":\n      - rowheader \"Address\"\n      - cell \"[REDACTED]\"\n- heading \"Record for [REDACTED]\" [level=2]\n- button \"Open [REDACTED]\": Open member\n- text: Contact [REDACTED] at [REDACTED]\n- textbox \"Contact [REDACTED] at [REDACTED]\": [REDACTED]\n- table:\n  - rowgroup:\n    - row \"Review [REDACTED] [REDACTED]\":\n      - rowheader \"Review [REDACTED]\"\n      - cell \"[REDACTED]\":\n        - textbox: [REDACTED]\n- text: Memo\n- textbox \"Memo\": [REDACTED]\n- button \"Search\"\n- iframe [name=\"[REDACTED] member workspace\"]:\n  - table:\n    - rowgroup:\n      - row \"Member name [REDACTED]\":\n        - rowheader \"Member name\"\n        - cell \"[REDACTED]\"\n      - row \"Member ID [REDACTED]\":\n        - rowheader \"Member ID\"\n        - cell \"[REDACTED]\"\n      - row \"Savings balance [REDACTED]\":\n        - rowheader \"Savings balance\"\n        - cell \"[REDACTED]\"\n      - row \"Member ID [REDACTED]\":\n        - rowheader \"Member ID\"\n        - cell \"[REDACTED]\":\n          - textbox\n      - row \"Review [REDACTED] [REDACTED]\":\n        - rowheader \"Review [REDACTED]\"\n        - cell \"[REDACTED]\":\n          - textbox\n  - heading \"Account for [REDACTED]\" [level=2]\n  - button \"Open [REDACTED]\": Open member\n  - text: Call [REDACTED] at [REDACTED]\n  - textbox \"Call [REDACTED] at [REDACTED]\"\n  - button \"Account summary\""
+}
