@@ -1,0 +1,95 @@
+{
+  "status": "intervention_required",
+  "code": "APPLICATION_ERROR",
+  "step": "step-2",
+  "phase": "after",
+  "expected": [
+    {
+      "target": {
+        "frame": "Member workspace",
+        "strategies": [
+          {
+            "kind": "role",
+            "role": "heading",
+            "name": "Search results"
+          }
+        ]
+      },
+      "op": "visible"
+    }
+  ],
+  "observed": {
+    "url": "http://127.0.0.1:4173/bank?scenario=app_error",
+    "title": "Relay · Banking sandbox",
+    "text": "relay↗\nMEMBER OPERATIONS\n◈   Member workspace\n▤   Activity ledger\n◇   Service requests\n⚑   Review queue\nSandbox connection\nSynthetic records only\nUI automation training environment\nOperations   /   Member services\nSANDBOX · NO REAL BANKING\nA clear path through complexity.\n\nFind a member, verify the account, and keep the human in control.\n\nLOCAL / UI-ONLY / REVERSIBLE\nRelay sandbox · Fictional credit union\nAccessible controls · Nested workspace · Synthetic data\n\nNorthstar Credit Union\nMEMBER SERVICES / SANDBOX\nWORKSPACE 04 / SYNTHETIC\nMember services   /   Workspace\nVERIFIED MEMBER INQUIRY\nApplication error\n\nThe synthetic directory could not complete this request.\n\n◇\nThe synthetic directory could not complete this request.\nNew search\nA deliberate service flow\n01\nLocate the member using a unique ID.\n02\nReview the member overview.\n03\nRead the verified account summary.\n\nEvery value on this screen is fictional. This sandbox never connects to a bank.\n\nRecovery controls let an operator resolve interruptions without restarting the workflow.\n\nTraining fixture · No production data · All actions occur inside this browser workspace.",
+    "controls": [
+      {
+        "name": "New search",
+        "role": "button",
+        "target": {
+          "strategies": [
+            {
+              "kind": "role",
+              "name": "New search",
+              "role": "button"
+            }
+          ],
+          "frame": "Member workspace"
+        }
+      }
+    ],
+    "frames": [
+      {
+        "name": "Main page",
+        "text": "relay↗\nMEMBER OPERATIONS\n◈   Member workspace\n▤   Activity ledger\n◇   Service requests\n⚑   Review queue\nSandbox connection\nSynthetic records only\nUI automation training environment\nOperations   /   Member services\nSANDBOX · NO REAL BANKING\nA clear path through complexity.\n\nFind a member, verify the account, and keep the human in control.\n\nLOCAL / UI-ONLY / REVERSIBLE\nRelay sandbox · Fictional credit union\nAccessible controls · Nested workspace · Synthetic data"
+      },
+      {
+        "name": "Member workspace",
+        "text": "Northstar Credit Union\nMEMBER SERVICES / SANDBOX\nWORKSPACE 04 / SYNTHETIC\nMember services   /   Workspace\nVERIFIED MEMBER INQUIRY\nApplication error\n\nThe synthetic directory could not complete this request.\n\n◇\nThe synthetic directory could not complete this request.\nNew search\nA deliberate service flow\n01\nLocate the member using a unique ID.\n02\nReview the member overview.\n03\nRead the verified account summary.\n\nEvery value on this screen is fictional. This sandbox never connects to a bank.\n\nRecovery controls let an operator resolve interruptions without restarting the workflow.\n\nTraining fixture · No production data · All actions occur inside this browser workspace."
+      }
+    ]
+  },
+  "sessionId": "a301d09b-3a88-4312-834b-152b2f04a9e8",
+  "modelCalls": 0,
+  "intervention": {
+    "id": "13556f37-3d00-4a1b-992b-2d38df11c8e6",
+    "code": "APPLICATION_ERROR",
+    "capability": "member-savings.lookup",
+    "step": "step-2",
+    "phase": "after",
+    "expected": "[CIRCULAR]",
+    "observed": {
+      "url": "http://127.0.0.1:4173/bank?scenario=app_error",
+      "title": "Relay · Banking sandbox",
+      "text": "relay↗\nMEMBER OPERATIONS\n◈   Member workspace\n▤   Activity ledger\n◇   Service requests\n⚑   Review queue\nSandbox connection\nSynthetic records only\nUI automation training environment\nOperations   /   Member services\nSANDBOX · NO REAL BANKING\nA clear path through complexity.\n\nFind a member, verify the account, and keep the human in control.\n\nLOCAL / UI-ONLY / REVERSIBLE\nRelay sandbox · Fictional credit union\nAccessible controls · Nested workspace · Synthetic data\n\nNorthstar Credit Union\nMEMBER SERVICES / SANDBOX\nWORKSPACE 04 / SYNTHETIC\nMember services   /   Workspace\nVERIFIED MEMBER INQUIRY\nApplication error\n\nThe synthetic directory could not complete this request.\n\n◇\nThe synthetic directory could not complete this request.\nNew search\nA deliberate service flow\n01\nLocate the member using a unique ID.\n02\nReview the member overview.\n03\nRead the verified account summary.\n\nEvery value on this screen is fictional. This sandbox never connects to a bank.\n\nRecovery controls let an operator resolve interruptions without restarting the workflow.\n\nTraining fixture · No production data · All actions occur inside this browser workspace.",
+      "controls": [
+        {
+          "name": "New search",
+          "role": "button",
+          "target": {
+            "strategies": [
+              {
+                "kind": "role",
+                "name": "New search",
+                "role": "button"
+              }
+            ],
+            "frame": "Member workspace"
+          }
+        }
+      ],
+      "frames": [
+        {
+          "name": "Main page",
+          "text": "relay↗\nMEMBER OPERATIONS\n◈   Member workspace\n▤   Activity ledger\n◇   Service requests\n⚑   Review queue\nSandbox connection\nSynthetic records only\nUI automation training environment\nOperations   /   Member services\nSANDBOX · NO REAL BANKING\nA clear path through complexity.\n\nFind a member, verify the account, and keep the human in control.\n\nLOCAL / UI-ONLY / REVERSIBLE\nRelay sandbox · Fictional credit union\nAccessible controls · Nested workspace · Synthetic data"
+        },
+        {
+          "name": "Member workspace",
+          "text": "Northstar Credit Union\nMEMBER SERVICES / SANDBOX\nWORKSPACE 04 / SYNTHETIC\nMember services   /   Workspace\nVERIFIED MEMBER INQUIRY\nApplication error\n\nThe synthetic directory could not complete this request.\n\n◇\nThe synthetic directory could not complete this request.\nNew search\nA deliberate service flow\n01\nLocate the member using a unique ID.\n02\nReview the member overview.\n03\nRead the verified account summary.\n\nEvery value on this screen is fictional. This sandbox never connects to a bank.\n\nRecovery controls let an operator resolve interruptions without restarting the workflow.\n\nTraining fixture · No production data · All actions occur inside this browser workspace."
+        }
+      ]
+    },
+    "sessionId": "a301d09b-3a88-4312-834b-152b2f04a9e8",
+    "epoch": 2
+  }
+}
